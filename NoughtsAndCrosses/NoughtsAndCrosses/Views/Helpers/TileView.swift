@@ -47,8 +47,9 @@ struct TileView: View {
     func handleUserAction() {
 
         // Make this tile show the symbol for the current player
-        state = player
-        
+        if state == empty {
+            state = player
+        }
         // Advance to next turn
         turn += 1
         
